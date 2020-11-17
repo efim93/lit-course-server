@@ -34,6 +34,8 @@ app.use(function (req, res, next) {
 app.use(express.static(config.publicPath));
 
 require('./app/lit-course.routes.js')(app);
+require('./app/utils/efim93/insert-many-collections');
+require('./app/routes/efim93.routes.js')(app);
 
 app.get('*', (req, res) => {
   res.sendFile(`${config.publicPath}/index.html`);

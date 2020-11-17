@@ -8,6 +8,18 @@ const options = {
   serverSelectionTimeoutMS: 5000
 };
 
+exports.mongo = {
+  mongo: require('mongodb').MongoClient,
+  url: `mongodb://${domain}:${port}`,
+  options: {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 5000
+  },
+  db: 'lit-course',
+  collection: ''
+};
+
 exports.mongoConnect = async (refs = {
   db: 'lit-course',
   collection: 'lit-data'
